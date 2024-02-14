@@ -7,5 +7,5 @@ for _ in range(T):
 
 for i in range(1, 7):
     for j in arr[i]:
-        room_num += j//2 + j%2
+        room_num += j//K + int(j%K>0)
 print(room_num)
