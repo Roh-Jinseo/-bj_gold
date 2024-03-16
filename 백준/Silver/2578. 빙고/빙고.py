@@ -1,16 +1,11 @@
 def check():
-    #row check
     for row in range(5):
-        if hor[row] == 0 and sum(called[row])==5:
-            hor[row] = 1
-
-    for col in range(5):
-        if ver[col] == 0 :
-            for col in range(5):
-                c = 0
-                for row in range(5):
-                    c += called[row][col]
-                if c == 5 : ver[col] = 1
+        if hor[row] == 0 and sum(called[row])==5: hor[row] = 1
+    c= 0
+    for cols in zip(called[0],called[1],called[2],called[3],called[4]):
+        if ver[c] == 0 and sum(cols) == 5 :
+            ver[c] = 1
+        c += 1
     if diag[0] == 0 :
         d0 = 0
         for i in range(5): d0 += called[i][i]
